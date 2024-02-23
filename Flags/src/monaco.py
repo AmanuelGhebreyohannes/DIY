@@ -1,46 +1,115 @@
 import turtle
 
-# Set up the turtle
+width=600
+height=600
+# Setup the screen
 screen = turtle.Screen()
-screen.setup(width=600, height=400)
-screen.bgcolor("white")
-screen.title("Monaco Flag Drawing")
+screen.setup(width, height)
+screen.title("Kuwait Flag Drawing")
 
 # Create a turtle object
 t = turtle.Turtle()
 # t.speed(0)  # Set maximum speed
 x=input("Press Enter to start")
 
-# Define function to draw rectangle with border
-def draw_rectangle_with_border(fill_color, border_color, width, height):
-    t.color(border_color)
-    t.fillcolor(fill_color)
+# Function to draw a pole with given color
+def draw_pole(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+50),(height/2-50)
+    x2,y2 = (-width/2+30),(height/2-50)
+    x3,y3 = (-width/2+30),(-height+50)
+    x4,y4 = (-width/2+50),(-height+50)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
     t.begin_fill()
-    for _ in range(2):
-        t.forward(width)
-        t.right(90)
-        t.forward(height)
-        t.right(90)
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
     t.end_fill()
+    t.penup()
 
-# Draw the pole
-pole_height = 750  # Adjusted height for the pole
-t.penup()
-t.goto(-310, 200)  # Adjusted position for the pole
-t.pendown()
-draw_rectangle_with_border("#666666", "black", 10, pole_height)  # Gray color for the pole
+def draw_green(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+50),(height/2-50)
+    x2,y2 =(-width/2+450),(height/2-50)
+    x3,y3 = (-width/2+450),(height/2-200)
+    x4,y4 = (-width/2+150),(height/2-200)
+    x5,y5 = (-width/2+50),(height/2-50)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
+    t.begin_fill()
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
+    t.goto(x5,y5)
+    t.goto(x4,y4)
+    t.end_fill()
+    t.penup()
 
-# Draw the red rectangle (flag)
-t.penup()
-t.goto(-300, 200)
-t.pendown()
-draw_rectangle_with_border("#FF0000", "black", 600, 200)
+def draw_white(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+150),(height/2-200)
+    x2,y2 =(-width/2+450),(height/2-200)
+    x3,y3 = (-width/2+450),(height/2-300)
+    x4,y4 = (-width/2+150),(height/2-300)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
+    t.begin_fill()
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
+    t.goto(x1,y1)
+    t.end_fill()
+    t.penup()
 
-# Draw the white rectangle (flag)
-t.penup()
-t.goto(-300, 0)
-t.pendown()
-draw_rectangle_with_border("white", "black", 600, 200)
+def draw_black(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+50),(height/2-50)
+    x2,y2 = (-width/2+150),(height/2-200)
+    x3,y3 = (-width/2+150),(height/2-300)
+    x4,y4 = (-width/2+50),(height/2-450)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
+    t.begin_fill()
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
+    t.goto(x1,y1)
+    t.end_fill()
+    t.penup()
+
+def draw_red(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+150),(height/2-300)
+    x2,y2 = (-width/2+450),(height/2-300)
+    x3,y3 = (-width/2+450),(height/2-450)
+    x4,y4 = (-width/2+50),(height/2-450)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
+    t.begin_fill()
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
+    t.goto(x1,y1)
+    t.end_fill()
+    t.penup()
+
+draw_pole("brown")  # pole
+draw_green("green")
+draw_white("white")
+draw_black("black")
+draw_red("red")
+
 
 # Hide turtle and display the flag
 t.hideturtle()

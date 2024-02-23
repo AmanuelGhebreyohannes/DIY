@@ -1,60 +1,110 @@
 import turtle
 
+width=600
+height=600
 # Setup the screen
 screen = turtle.Screen()
-screen.setup(width=600, height=400)
+screen.setup(width, height)
 screen.title("Kuwait Flag Drawing")
 
 # Create a turtle object
 t = turtle.Turtle()
-t.speed(0)  # Set maximum speed
+# t.speed(0)  # Set maximum speed
+x=input("Press Enter to start")
 
-# Function to draw a rectangle with given color
-def draw_rectangle(color, width, height):
+# Function to draw a pole with given color
+def draw_pole(color):
     t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+50),(height/2-50)
+    x2,y2 = (-width/2+30),(height/2-50)
+    x3,y3 = (-width/2+30),(-height+50)
+    x4,y4 = (-width/2+50),(-height+50)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
     t.begin_fill()
-    for _ in range(2):
-        t.forward(width)
-        t.right(90)
-        t.forward(height)
-        t.right(90)
-        t.forward(width)
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
     t.end_fill()
+    t.penup()
 
-# Function to draw the flagpole
-def draw_flagpole(height):
-    t.color("black")
+def draw_green(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+50),(height/2-50)
+    x2,y2 =(-width/2+450),(height/2-50)
+    x3,y3 = (-width/2+450),(height/2-200)
+    x4,y4 = (-width/2+150),(height/2-200)
+    x5,y5 = (-width/2+50),(height/2-50)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
     t.begin_fill()
-    t.left(90)
-    t.forward(height)
-    t.right(90)
-    t.forward(20)
-    t.right(90)
-    t.forward(height)
-    t.right(90)
-    t.forward(20)
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
+    t.goto(x5,y5)
+    t.goto(x4,y4)
     t.end_fill()
+    t.penup()
 
-# Draw the flag
-flag_width = 300
-flag_height = 200
-draw_rectangle("green", flag_width, flag_height/3)  # Green stripe
-t.right(180)
-# t.forward(flag_width)
-draw_rectangle("white", flag_width, flag_height/3)  # White stripe
-t.right(180)
-# t.forward(flag_width)
-draw_rectangle("red", flag_width, flag_height/3)  # Red stripe
+def draw_white(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+150),(height/2-200)
+    x2,y2 =(-width/2+450),(height/2-200)
+    x3,y3 = (-width/2+450),(height/2-300)
+    x4,y4 = (-width/2+150),(height/2-300)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
+    t.begin_fill()
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
+    t.goto(x1,y1)
+    t.end_fill()
+    t.penup()
 
-# Position the turtle for drawing the flagpole
-t.penup()
-t.goto(-10, -200)  # Adjusted position for the flagpole
-t.pendown()
+def draw_black(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+50),(height/2-50)
+    x2,y2 = (-width/2+150),(height/2-200)
+    x3,y3 = (-width/2+150),(height/2-300)
+    x4,y4 = (-width/2+50),(height/2-450)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
+    t.begin_fill()
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
+    t.goto(x1,y1)
+    t.end_fill()
+    t.penup()
 
-# Draw the flagpole
-flagpole_height = 300
-draw_flagpole(flagpole_height)
+def draw_red(color):
+    t.color(color)
+    t.penup()
+    x1,y1 = (-width/2+150),(height/2-300)
+    x2,y2 = (-width/2+450),(height/2-300)
+    x3,y3 = (-width/2+450),(height/2-450)
+    x4,y4 = (-width/2+50),(height/2-450)
+    t.goto(x1,y1)
+    t.pendown()
+    t.fillcolor(color)
+    t.begin_fill()
+    t.goto(x2,y2)
+    t.goto(x3,y3)
+    t.goto(x4,y4)
+    t.goto(x1,y1)
+    t.end_fill()
+    t.penup()
 
-# Hide turtle and display the flag
-t.hideturtle()
-turtle.done()
+draw_pole("brown")  # pole
+draw_green("green")
+draw_white("white")
+draw_black("black")
