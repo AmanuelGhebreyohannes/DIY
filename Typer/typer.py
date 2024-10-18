@@ -47,11 +47,11 @@ def read_file_and_press_keys(filename):
             # Adjust cursor position
             #cursor_position = (cursor_position[0] + 1, cursor_position[1])
             cursor_position = (0, 0)
-        time.sleep(0.075)  # Adjust the delay as needed
+        time.sleep(0.015)  # Adjust the delay as needed
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python script.py <filename>")
+        print("Usage: python typer.py <filename>")
         sys.exit(1)
 
     filename = sys.argv[1]

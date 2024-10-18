@@ -3,6 +3,6 @@ This package
 
 ## USAGE: 
 
-$python keypresser.py <filename>
+$python typer.py <filename>
 
-Then click on the file you want to type
+Then left click on the empty file you want to type
