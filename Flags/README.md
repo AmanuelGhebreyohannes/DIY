@@ -8,6 +8,7 @@ For now the flags are
     1. Monaco
     2. Kuwait
     3. Eritrea
-    
+    4. France
+
 Enjoy!
 	
