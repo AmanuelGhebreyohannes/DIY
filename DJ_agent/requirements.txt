@@ -1,0 +1,8 @@
+librosa 
+numpy 
+pydub 
+pyrubberband 
+soundfile 
+pyaudio 
+flask
+scipy
